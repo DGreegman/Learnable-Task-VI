@@ -6,15 +6,28 @@ A simple console JavaScript Program to Validate Credit card number, indicating c
 This only covers only the Three Major card used in my country Home, Nigeria Visa, Verve and MasterCard 
 
 ## Regex Pattern Used 
-> for MasterCard I used this pattern below:
 
     masterCardRegex = /^5[1-5][0-9]{14,16}/
 
-> for Verve I used the pattern below:
+*This will match strings that*
+1. Start with a 5 (^5)
+2. Followed by a digit between 1-5 ([1-5])
+3. Followed by 14 to 16 digits ([0-9]{14,16})
+
+
     verveRegex = /^(506[0-1]{1}[0-9]{11,13}|650[0-9]{12,14})/
 
-> for Visa I used the pattern below:
+*This pattern contains an OR (|) condition*
+1. It will match strings that:
+2. Start with 506 followed by a 0 or 1, then 11-13 digits
+3. OR start with 650 followed by 12-14 digits
+
+
     visaRegex = /^4[0-9]{12,15}/
+
+*This will match strings that*
+1. Start with a 4 (^4)
+2. Followed by 12 to 15 digits ([0-9]{12,15})
 
 ## Features of the program 
 The Program has a single Class of name Validators and a Function file that implemented the class called validated
@@ -32,3 +45,8 @@ The Class has four Properties and Three Methods namely
 1. masterCardValidation: for all the validation concerning Master card
 2. visaValidation: for all the validation associated with Visa Card
 3. verveValidation: for all the validation associated with Verve card 
+
+
+**Validated Function**
+This function is in the file validate.js with one parameter called number to capture the user input when passed to the method that was created in the class.
+Basically the function is just used to implement the Validate class
